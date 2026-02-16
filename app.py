@@ -26,7 +26,7 @@ app.add_middleware(
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 # Downscale big images to avoid huge RAM/CPU spikes
-MAX_SIDE = int(os.getenv("MAX_IMAGE_SIDE", "640"))  # 1024–1600 is a good range
+MAX_SIDE = int(os.getenv("MAX_IMAGE_SIDE", "768"))  # 1024–1600 is a good range
 # Safety: reject extremely large uploads (bytes)
 MAX_UPLOAD_BYTES = int(os.getenv("MAX_UPLOAD_BYTES", str(8 * 1024 * 1024)))  # 8MB default
 # How long we allow inference to "take" before we say it's slow (for logging)
